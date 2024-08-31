@@ -63,13 +63,32 @@
         <span class="btn-container">
             <img class="img" id="img1" src="minus.png" onclick="count1('dec')">
             <button class="btn">buy now</button>
-            
+            <img class="img" id="img2" src="add.png" onclick="count1('inc')">
         </span>
         <p id="res"> 1 </p>
 
        </div>
     </div>
-    
+    <script>
+        function count1(value) {
+
+            const res = document.getElementById('res')
+            let resElement = parseInt(res.innerText);
+            if (resElement == 5 && value == 'inc') {
+                alert('value cannot be grater than 5')
+                return;
+            }
+            else if (resElement == 1 && value == 'dec') {
+                alert('value cannot be less than 1')
+
+                return;
+            }
+            value == 'inc' ? res.innerText = ++resElement : res.innerText = --resElement
+        }
+
+
+
+    </script>
 </body>
 
 </html>
